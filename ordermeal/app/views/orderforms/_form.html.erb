@@ -1,0 +1,37 @@
+<%= form_for(@orderform) do |f| %>
+  <% if @orderform.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@orderform.errors.count, "error") %> prohibited this orderform from being saved:</h2>
+
+      <ul>
+      <% @orderform.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "饭店" %><br />
+    <%= f.text_field :hotel_name %>
+  </div>
+  <div class="field">
+    <%= f.label "菜" %><br />
+    <%= f.text_field :taste %>
+  </div>
+  <div class="field">
+    <%= f.label "价格" %><br />
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label "数量" %><br />
+    <%= f.number_field :quantity %>
+  </div>
+   <div class="field">
+    <%= f.label "所属用户id" %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<!-- 此布局只改变登录框的内容 -->
+<html>
+<!-- <a href="/">首页</a>&gt;&gt; -->
+<title>订餐首页</title>
+<head>
+<meta http-equiv="Content-Type" content="text/heml;charset=UTF-8">
+<%=javascript_include_tag "jquery-1.4.2.js"%>
+<%=javascript_include_tag "home.js.coffee"%>
+<%=stylesheet_link_tag "home.css.scss"%>
+</head> 
+
+ 
+ <body>
+ 	<!-- 最上面的div -->
+ 	<div class="top"><a href="/">首页&nbsp;&nbsp;&nbsp;&nbsp;</a>&gt;&gt;
+ 		<%=notice%>
+ 	</div>
+ 	<!-- logo -->
+ 	<div class="logo"><%=image_tag "1.jpg" ,:size=>"200x100",:mouseover=>"2.jpg",:title=>"飞毛腿"%></div>
+ 	<!-- 导航栏 -->
+ 	<div class="navi">导航栏</div>
+ 	<!-- 广告 -->
+ 	<div class="ad">广告</div>
+ 	
+ 	<%=yield%>
+
+ 	<!-- 其他 -->
+ 	<div class="other"></div>
+ 
+ </body>
+ 
+ 
+ 
+ </html>

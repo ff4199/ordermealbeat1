@@ -1,0 +1,52 @@
+<%= params[:notice] %>
+<h1>饭店列表</h1>
+<%=link_to"返回首页",{:controller=>"home",:action=>"index"}%>
+
+<table border="1">
+  <tr>
+    <th>id</th>
+    <th>店面</th>
+    <th>菜</th>
+    <th>数量</th>
+    <th>价格</th>
+  </tr>
+
+<% temp_id=0%>
+<% @hotels.each do |hotel| %>
+<%if(hotel.orderforms!=nil)%>
+  <% hotel.orderforms.each do |p|%>
+  <tr>
+    <%if(temp_id!=hotel.id)
+        temp_id=hotel.id%>
+    <td rowspan="<%=hotel.orderforms.size%>"><%= hotel.id %></td>
+    <td rowspan="<%=hotel.orderforms.size%>"><%= hotel.name %></td>
+       
+    <%end%>
+    <td><%= p.taste%></td>
+    <td><%= p.quantity%></td>
+    <td><%= p.price%>￥</td>
+    
+    <td ><%= link_to '显示', hotel %></td>
+    <td ><%= link_to '编辑', edit_hotel_path(hotel ) %></td>
+    <td ><%= link_to '删除', hotel, method: :delete, data: { confirm: '确定删除用户吗?' } %></td>
+  <%end%>
+  <%end%>
+  <%if(hotel.orderforms.size==0)%>
+  <tr>
+    <td><%= hotel.id %></td>
+    <td><%= hotel.name %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    
+    <td ><%= link_to '显示', hotel %></td>
+    <td ><%= link_to '编辑', edit_hotel_path(hotel ) %></td>
+    <td ><%= link_to '删除', hotel, method: :delete, data: { confirm: '确定删除用户吗?' } %></td>
+  <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '创建饭店(没有和订单关联)', new_hotel_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>id</b>
+  <%= @hotel.id %>
+</p>
+
+<p>
+  <b>店名</b>
+  <%= @hotel.name %>
+</p>
+
+
+<%= link_to '编辑', edit_hotel_path(@hotel) %> |
+<%= link_to '返回', hotels_path %>

@@ -1,0 +1,53 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+	width:950px;
+	height:800px;
+	margin:0 auto;
+	border:1px solid red;	
+}
+.top{
+	width:950px;
+	height:40px;
+	background-color:yellow;
+}
+.logo{
+	width:200px;
+	height:100px;
+	background-color:green;
+	margin-top:5px;
+	float:left;
+}
+.navi{
+	width:745px;
+	height:100px;
+	background-color:pink;
+	margin-left:5px;
+	margin-top:5px;
+	float:left;
+}
+.ad{
+	width:700px;
+	height:700px;
+	background-color:green;
+	margin-top:5px;
+	float:left;
+}
+.login{
+	width:245px;
+	height:350px;
+	margin-left:5px;
+	background-color:yellow;
+	margin-top:5px;
+	float:left;
+}
+.other{
+	width:245px;
+	height:345px;
+	margin-left:5px;
+	background-color:blue;
+	margin-top:5px;
+	float:left;
+}

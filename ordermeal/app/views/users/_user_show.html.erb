@@ -1,0 +1,16 @@
+<%= notice %></p>
+
+<p>
+  <b>用户名</b>
+  <%= @user.name %>
+</p>
+<p>
+  <b>等级</b>
+  <%= @user.level %>
+</p>
+<p> 
+  <b>积分</b>
+  <%= @user.point %>
+</p>
+
+<%= link_to '编辑', edit_user_path(@user) %>

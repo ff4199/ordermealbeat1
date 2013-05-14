@@ -1,0 +1,36 @@
+<h1>Listing orderforms</h1>
+
+<table border="1">
+  <tr>
+    <th>饭店</th>
+    <th>菜</th>
+    <th>价格</th>
+    <th>数量</th>
+    <th>所属用户id</th>
+    <th>所属餐厅id</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+<% @orderforms.each do |orderform| %>
+
+  <tr>
+    <td><%= orderform.hotel_name %></td>
+    <td><%= orderform.taste %></td>
+    <td><%= orderform.price %></td>
+    <td><%= orderform.quantity %></td>
+    <td><%= orderform.user_id %></td>
+    <td><%= orderform.hotel_id %></td>
+  
+    <td><%= link_to '显示', orderform %></td>
+    <td><%= link_to '编辑', edit_orderform_path(orderform) %></td>
+    <td><%= link_to '删除', orderform, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '创建新订单', new_orderform_path %>

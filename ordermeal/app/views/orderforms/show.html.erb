@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Hotel:</b>
+  <%= @orderform.hotel_name %>
+</p>
+
+<p>
+  <b>Taste:</b>
+  <%= @orderform.taste %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @orderform.price %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @orderform.quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_orderform_path(@orderform) %> |
+<%= link_to 'Back', orderforms_path %>

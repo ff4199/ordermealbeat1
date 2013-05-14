@@ -1,0 +1,78 @@
+
+<%=link_to"返回首页",:controller=>"/home",:action=>"index"%>
+<%=link_to"跳转到饭店",:controller=>"hotels",:action=>"index",:notice=>"欢迎光临饭店"%>
+
+<h1>用户列表</h1>
+
+<table border="1">
+  <tr>
+    <th>id</th>
+    <th>用户名</th>
+    <th>电子邮件</th>
+    <th>电话</th>
+    <th>等级</th>
+    <th>宿舍</th>
+    <th>积分</th>
+    <th>菜</th>
+    <th>数量</th>
+    <th>单价</th>
+    <th>饭店</th>
+    
+    <th colspan="3">操作</th>
+    
+  </tr>
+
+<% temp_id=0%>
+<% @users.each do |user| %>
+<%if(user.orderforms.size!=0)%>
+  <% user.orderforms.each do |p|%>
+  <tr>
+    <%if(temp_id!=user.id)
+        temp_id=user.id%>
+    <td rowspan="<%=user.orderforms.size%>"><%= user.id %></td>
+    <td rowspan="<%=user.orderforms.size%>"><%= user.name %></td>
+    <td rowspan="<%=user.orderforms.size%>"><%= user.email %></td>
+    <td rowspan="<%=user.orderforms.size%>"><%= user.tel %></td>
+    <td rowspan="<%=user.orderforms.size%>"><%= user.level %></td>
+    <td rowspan="<%=user.orderforms.size%>"><%= user.room %></td>
+    <td rowspan="<%=user.orderforms.size%>"><%= user.point %></td>
+    
+    
+    <%end%>
+    <td><%= p.taste%></td>
+    <td><%= p.quantity%></td>
+    <td><%= p.price%>￥</td>
+    <td><%= p.hotel_name%></td>
+    
+    <td ><%= link_to '显示', user %></td>
+    <td ><%= link_to '编辑', edit_user_path(user ) %></td>
+    <td ><%= link_to '删除', user, method: :delete, data: { confirm: '确定删除用户吗?' } %></td>
+  <%end%>
+  <%end%>
+
+   <%if(user.orderforms.size==0)%>
+   <tr> 
+      <td><%= user.id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.tel %></td>
+      <td><%= user.level %></td>
+      <td><%= user.room %></td>
+      <td><%= user.point %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    
+      <td ><%= link_to '显示', user %></td>
+      <td><%= link_to '编辑', edit_user_path(user ) %></td>
+      <td ><%= link_to '删除', user, method: :delete, data: { confirm: '确定删除用户吗?' } %></td>
+   <%end%>
+  </tr>
+ 
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '创建用户', new_user_path %>

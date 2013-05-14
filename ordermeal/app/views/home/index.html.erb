@@ -1,0 +1,15 @@
+ <!-- 登录 -->
+ <div class="login">
+ <%=form_tag "home/login"%>
+ 	<%=radio_button_tag "login_name","admin"%>管理员
+ 	<%=radio_button_tag "login_name","user",true%>用户<br>
+ 	<%=label_tag "管理员名:"%>
+ 	<!-- 用户名和密码 -->
+ 	<%=text_field_tag :name,nil,:size=>"10x4"%><br>
+ 	<%=label_tag"密码:"%>
+ 	<%=password_field_tag :password,nil,:size=>10,:maxlength=>10%><br>
+ 	<!-- 隐藏控件 -->
+ 	<%=hidden_field_tag "sessionid"%>
+ 	<%=submit_tag "登录"%>
+ 	<%=link_to '申请帐号',"/users/new"%>
+ </div>

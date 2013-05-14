@@ -1,0 +1,42 @@
+<!-- 此布局用于管理员查看各表单 -->
+<title>订餐首页</title>
+<head>
+<meta http-equiv="Content-Type" content="text/heml;charset=UTF-8">
+<%=javascript_include_tag "jquery-1.4.2.js"%>
+<%=javascript_include_tag "home.js.coffee"%>
+<%=stylesheet_link_tag "home.css.scss"%>
+</head> 
+
+ 
+ <body>
+ 	<!-- 最上面的div -->
+ 	<div class="top"><a href="/">首页&nbsp;&nbsp;&nbsp;&nbsp;</a>&gt;&gt;
+ 		<%=notice%>
+ 		欢迎来到飞毛腿订餐
+ 	</div>
+ 	<!-- logo -->
+ 	<div class="logo"><%=image_tag "1.jpg" ,:size=>"200x100",:mouseover=>"2.jpg",:title=>"飞毛腿"%></div>
+ 	<!-- 导航栏 -->
+ 	<div class="navi">	
+		<p><%=link_to "管理员界面",admins_path%>
+		<%=link_to "用户界面",users_path%>
+		<%=link_to "饭店管理界面",hotels_path%>
+		<%=link_to "订单管理界面",orderforms_path%></p>
+	</div>
+ 	<!-- 广告 -->
+ 	<div class="ad">
+ 		<%=yield%>
+ 	</div>
+ 	<div class="login">
+ 		
+ 	</div>
+ 	
+
+ 	<!-- 其他 -->
+ 	<div class="other"></div>
+ 
+ </body>
+ 
+ 
+ 
+ </html>

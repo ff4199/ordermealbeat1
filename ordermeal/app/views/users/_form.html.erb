@@ -1,0 +1,46 @@
+<%= form_for(@user) do |f| %>
+
+  <div class="field">
+    <%= f.label "用户名" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "密码" %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label "电子邮箱" %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label "电话" %><br />
+    <%= f.number_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label "等级" %><br />
+    <%= f.number_field :level %>
+  </div>
+  <div class="field">
+    <%= f.label "宿舍" %><br />
+    <%= f.text_field :room %>
+  </div>
+    <div class="field">
+    <%= f.label "积分" %><br />
+    <%= f.number_field :point %>
+  </div>
+  <div class="actions">
+    <%= f.submit("提交") %>
+  </div>
+<% end %>
+
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
